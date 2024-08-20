@@ -5,3 +5,9 @@
 .product-name {
     @apply text-2xl font-bold
 }
+
+.back-color01 {
+    @media screen and (max-width: 768px) {
+        background-color: bisque;
+    }
+}

@@ -3,6 +3,16 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   darkMode: false,
   theme: {
+    extend: {
+      colors: {
+        'bisque': '#ffe4c4',
+        'light-gray': '#f7f7f7',
+        'dark-gray': '#333',
+        'dark-blue': '#1a1d23',
+        'light-blue': '#87ceeb',
+        'light-green': '#c6efce',
+      },
+    },
     screens: {
       'sm': '640px',
       'md': '768px',

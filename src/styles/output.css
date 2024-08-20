@@ -559,3 +559,9 @@ video {
   line-height: 2rem;
   font-weight: 700;
 }
+
+.back-color01 {
+  @media screen and (max-width: 768px) {
+    background-color: bisque;
+  }
+}
