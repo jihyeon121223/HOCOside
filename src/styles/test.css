@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.item{
+    width: 80px; height: 80px;
+    background-color: aqua;
+}
