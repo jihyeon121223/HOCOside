@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.product-name {
+.class-name {
     @apply text-2xl font-bold
 }
 
