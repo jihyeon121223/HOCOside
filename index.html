@@ -6,31 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
         <title>HOCO Project</title>
-        <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet"> -->
-        <!-- <link href="./src/styles/output.css" rel="stylesheet"> -->
-        <!-- <style>
-            .product-name {
-                @apply text-2xl font-bold;
-            }
-        </style> -->
 
     <body class="class-name bg-gray-100 p-10">
 
-        <div class="flex flex-col items-center justify-center h-screen">
-            <h1 class="text-2xl font-bold text-gray-800 mb-4">단어 착즙기</h1>
+        <div class="class_name001 flex flex-col items-center justify-center h-screen">
+            <h1 class="class_name002 text-2xl font-bold text-gray-800 mb-4">단어 착즙기</h1>
             
             <!-- 인풋 -->
             <div class="mb-4">
-                <label for="word" class="block mb-2 text-sm font-bold text-gray-700 font-bold mb-2">입력:</label>
-                <textarea id="textInput" rows="4" class="w-full p-2 border border-gray-300 rounded"></textarea>
+                <textarea id="textInput" rows="9" class="w-full p-2 border border-gray-300 rounded" placeholder="여기에 텍스트 입력"></textarea>
             </div>
 
             <!-- 버튼 -->
-             <button onclick="extractWords()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">제출<button>
+            <button onclick="extractWords()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">제출<button>
 
-            <!-- 결과 -->
-             <div id="results" class="mb-6">
-                <h2 class="text-xl font-semibold text-gray-800">추출 단어:</h2>
+            <!-- 결과 결과단을 옆으로 두바-->
+            <div id="results" class="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm">
+                <h2 class="text-xl font-semibold text-gray-800">단어 빈도:</h2>
                 <ul id="wordsList" class="list-disc list-inside mt-2 text-gray-600"></ul>
             </div>
 
