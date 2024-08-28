@@ -5,26 +5,52 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>HOCO Project</title>
+        <link rel="stylesheet" href="src/styles/style.css">
+        <title>HACO Project</title>
+        <style></style>
 
-    <body class="class-name bg-gray-100 p-10">
+    <body class="bg-gray-100 p-10">
 
-        <div class="class_name001 flex flex-col items-center justify-center h-screen">
-            <h1 class="class_name002 text-2xl font-bold text-gray-800 mb-4">단어 착즙기</h1>
+        <!-- menu -->
+
+        <div class="class_haco flex flex-col items-center justify-center h-screen">
             
-            <!-- 인풋 -->
-            <div class="mb-4">
-                <textarea id="textInput" rows="9" class="w-full p-2 border border-gray-300 rounded" placeholder="여기에 텍스트 입력"></textarea>
-            </div>
+            <header>
+                <h1 class="text-2xl font-bold text-gray-800 mb-4">단어 착즙기</h1>
+            </header>
+        
+            <main>
 
-            <!-- 버튼 -->
-            <button onclick="extractWords()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">제출<button>
+                <nav>
+                    <a href="#extract">단어추출</a>
+                    <a href="#compare">단어비교</a>                
+                </nav>
 
-            <!-- 결과 결과단을 옆으로 두바-->
-            <div id="results" class="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm">
-                <h2 class="text-xl font-semibold text-gray-800">단어 빈도:</h2>
-                <ul id="wordsList" class="list-disc list-inside mt-2 text-gray-600"></ul>
-            </div>
+                <section class="extract">
+                    <!-- 인풋 -->
+                    <div class="mb-4 submit">
+                        <textarea id="textInput" rows="9" class="w-full p-2 border border-gray-300 rounded" placeholder="여기에 텍스트 입력"></textarea>
+                        <button onclick="extractWords()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">제출<button>
+                    </div>
+                    <!-- 결과 -->
+                    <div id="results" class="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm">
+                        <h2 class="text-xl font-semibold text-gray-800">단어 빈도:</h2>
+                        <ul id="wordsList" class="list-disc list-inside mt-2 text-gray-600"></ul>
+                    </div>
+                </section>
+
+                <section class="compare">
+                    <textarea id="text1" rows="10" cols="30" placeholder="비교군1"></textarea>
+                    <textarea id="text2" rows="10" cols="30" placeholder="비교군2"></textarea>
+                    <br>
+                    <button onclick="compareTexts()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">비교<button></button>
+                    <div id="result1"></div>
+                    <div id="result2"></div>
+                </section>
+
+            </main>
+
+            <footer>side project from HACO</footer>
 
         <script src="./src/main.js"></script>
 
