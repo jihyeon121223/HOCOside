@@ -2,7 +2,8 @@
 
 /* 전체 페이지 스타일 */
 body {
-    
+    scroll-behavior: smooth;
+
 }
 
 /* 헤더 스타일 */
