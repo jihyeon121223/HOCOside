@@ -1,125 +1,126 @@
-/* styles.css */
-
 /* 전체 페이지 스타일 */
 body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f7f9fc; /* 더 밝고 부드러운 배경 */
+    color: #333;
     scroll-behavior: smooth;
-
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 /* 헤더 스타일 */
 header {
-    
+    background-color: #ffeb3b; /* 애플의 화사한 색상 */
+    padding: 24px; /* 여백 조정 */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    border-radius: 12px; /* 모서리 둥글게 */
+    transition: background-color 0.3s ease-in-out;
 }
 
 header h1 {
-    
+    font-size: 2.5rem; /* 제목 크기 증가 */
+    color: #333;
+    margin: 0;
+    font-weight: 700; /* 볼드한 제목 */
 }
 
-header nav {
-    
-}
-
-header nav a {
-    
-}
-
-header nav a:hover {
-    
-}
-
+/* 네비게이션 스타일 */
 nav {
-    position: relative;
-    top: 0;
-    width: 100%;              /* 너비를 화면 전체로 설정 */
-    z-index: 1000;            /* 다른 요소들 위에 위치 */
-    width: 200px;              /* nav 너비 */
-    height: 100px;             /* nav 높이 */
+    display: flex;
+    justify-content: center;
+    padding: 12px; /* 여백 조정 */
+    background-color: #ffeb3b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 12px; /* 마진 조정 */
+    border-radius: 8px; /* 모서리 둥글게 */
 }
 
 nav a {
-    display: inline-flex;            /* 각 링크를 블록으로 표시 */
-    padding: 10px 20px;
-    text-decoration: none;
     color: #333;
-    border-bottom: 1px solid #ccc;
-    flex-grow: 1; 
-    text-align: center;
+    text-decoration: none;
+    font-weight: 600; /* 더 굵은 폰트 */
+    margin: 0 20px; /* 간격 조정 */
+    padding: 10px 20px; /* 여백 조정 */
+    background-color: #ffe082; /* 배경색 */
+    border-radius: 25px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 nav a:hover {
-    background-color: #ddd;
+    background-color: #ffd740; /* 호버 시 색상 변화 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px); /* 호버 시 살짝 상승 효과 */
 }
 
-
-/* 메인 콘텐츠 스타일 */
-
-main {
-    overflow-y: auto;          /* 세로 스크롤을 자동으로 표시 */
-}
-
-class_haco {
-
-}
-
-.submit {
-    display: flex;
-    justify-content: center; /* 수평 가운데 정렬 */
-    text-align: center; /* 텍스트와 인라인 요소들을 가운데 정렬 */
-    }
-
-.highlight {
-    background-color: yellow;
-}
-
-.extractor {
-   
-}
-
-.extractor h2 {
-    
-}
-
+/* 텍스트 입력 영역 */
 textarea {
-    
+    width: 100%;
+    padding: 16px; /* 여백 증가 */
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 24px; /* 여백 증가 */
+    font-size: 1.1rem;
+    background-color: #fff;
+    transition: border-color 0.3s, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
 }
 
 textarea:focus {
-    
+    border-color: #ffeb3b; /* 포커스 시 경계 색상 변경 */
+    outline: none; /* 기본 아웃라인 제거 */
+    transform: scale(1.02); /* 포커스 시 살짝 확대 */
 }
 
+/* 버튼 스타일 */
 button {
-    
+    background-color: #ffd740; /* 버튼 배경색 */
+    color: #333;
+    padding: 14px 30px; /* 여백 조정 */
+    border: none;
+    border-radius: 25px; /* 둥근 버튼 */
+    font-size: 1.1rem;
+    font-weight: 600; /* 더 굵은 폰트 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
 }
 
 button:hover {
-    
+    background-color: #ffeb3b; /* 호버 시 색상 변화 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px); /* 호버 시 상승 효과 */
 }
 
 button:active {
-    
+    background-color: #ffe082; /* 클릭 시 색상 변화 */
+    transform: scale(0.95); /* 클릭 시 크기 감소 효과 */
 }
 
-#result {
-    
+/* 플로팅 액션 버튼 (FAB) */
+.fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffeb3b; /* 배경색 */
+    color: #333;
+    border: none;
+    width: 80px; /* FAB 너비 */
+    height: 80px; /* FAB 높이 */
+    border-radius: 50%; /* 원형 버튼 */
+    font-size: 1.5rem; /* 텍스트 크기 증가 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-#result h3 {
-    
+.fab:hover {
+    background-color: #ffd740; /* 호버 시 색상 변화 */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05); /* 호버 시 크기 증가 */
 }
 
-#word-list {
-    
-}
-
-#word-list li {
-    
-}
-
-#word-list li:hover {
-   
-}
-
-/* 푸터 스타일 */
-footer {
-    
+.fab:active {
+    background-color: #ffe082; /* 클릭 시 색상 변화 */
+    transform: scale(0.95); /* 클릭 시 크기 감소 효과 */
 }

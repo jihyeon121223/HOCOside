@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="src/styles/style.css">
-        <title>HACO Project</title>
-        <style></style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <title>Words Counter</title>
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXWQH60SPY"></script>
-        <script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXWQH60SPY"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-RXWQH60SPY');
-        </script>
-    </head>
+    </script>
+</head>
 
-    <body class="bg-gray-100 p-10">
+<body class="bg-gray-100 p-10">
 
-        <!-- menu -->
-
-        <div class="class_haco flex flex-col items-center justify-center h-screen">
-            
-            <header>
-                <h1 class="text-2xl font-bold text-gray-800 mb-4">단어 착즙기</h1>
-            </header>
+    <!-- Container -->
+    <div class="class_haco flex flex-col items-center justify-center h-screen">
         
-            <main>
+        <header class="mb-6 text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">단어 착즙기</h1>
+            <p class="text-gray-600">텍스트를 입력하거나 파일을 업로드하여 단어 수를 확인하세요.</p>
+        </header>
+    
+        <main>
 
-                <nav>
-                    <a href="#extract">단어추출</a>
-                    <a href="#compare">단어비교</a>                
-                </nav>
+            <section id="extract" class="w-full max-w-lg">
+                <!-- 텍스트 입력 -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">텍스트 입력</h2>
+                    <textarea id="textInput" rows="6" class="w-full p-3 border border-gray-300 rounded" placeholder="여기에 텍스트 입력"></textarea>
+                    <!-- 단어 수 카운터 -->
+                    <div id="wordCount" class="word-count text-right text-gray-600 mt-2">0 단어</div>
+                </div>
+                
+                <!-- 텍스트 파일 업로드 -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">파일 업로드</h2>
+                    <input type="file" id="fileInput" class="w-full p-2 border border-gray-300 rounded" accept=".txt">
+                </div>
 
-                <section class="extract">
-                    <!-- 인풋 -->
-                    <div class="mb-4 submit">
-                        <textarea id="textInput" rows="9" class="w-full p-2 border border-gray-300 rounded" placeholder="여기에 텍스트 입력"></textarea>
-                        <button onclick="extractWords()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">제출<button>
-                    </div>
-                    <!-- 결과 -->
-                    <div id="results" class="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm">
-                        <h2 class="text-xl font-semibold text-gray-800">단어 빈도:</h2>
-                        <ul id="wordsList" class="list-disc list-inside mt-2 text-gray-600"></ul>
-                    </div>
-                </section>
+                <!-- 제출 버튼 -->
+                <div class="mb-6">
+                    <button onclick="extractWords()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3 w-full rounded-md">제출</button>
+                </div>
 
-                <section class="compare">
-                    <textarea id="text1" rows="10" cols="30" placeholder="비교군1"></textarea>
-                    <textarea id="text2" rows="10" cols="30" placeholder="비교군2"></textarea>
-                    <br>
-                    <button onclick="compareTexts()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">비교<button></button>
-                    <div id="result1"></div>
-                    <div id="result2"></div>
-                </section>
+                <!-- 진행 바 -->
+                <div id="progressBar" class="progress-bar w-full h-2 bg-gray-200 rounded-full mb-6" style="display: none;">
+                    <div id="progress" class="progress h-full bg-yellow-500 rounded-full" style="width: 0;"></div>
+                </div>
 
-            </main>
+                <!-- 결과 출력 -->
+                <div id="results" class="p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <h2 class="text-xl font-semibold text-gray-800">단어 빈도:</h2>
+                    <ul id="wordsList" class="list-disc list-inside mt-2 text-gray-600"></ul>
+                </div>
+            </section>
 
-            <footer>side project from HACO</footer>
+        </main>
 
-        <script src="./src/main.js"></script>
+        <!-- 플로팅 액션 버튼 -->
+        <button id="resetButton" class="fab fixed bottom-10 right-10 bg-yellow-500 text-white text-lg rounded-full w-20 h-20 shadow-lg hover:bg-yellow-600">Reset</button>
 
-    </body>
+        <footer class="mt-10 text-gray-600">Contact us: yjh121223@gmail.com</footer>
+
+    </div>
+
+    <!-- JS 파일 연결 -->
+    <script src="./src/main.js"></script>
+
+</body>
 
 </html>
