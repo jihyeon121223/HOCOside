@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+
+	& > header nav ol {
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+
+		list-style: none;
+		padding: 0;
+	}
+}
+
+main[data-visible-page] {
+	/* & > div {
+		display: block;
+	} */
+
+	&[data-visible-page="extract"] div:not(#extract),
+	&[data-visible-page="ranking"] div:not(#ranking) {
+		display: none;
+	}
+}

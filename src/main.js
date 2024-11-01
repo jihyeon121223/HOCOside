@@ -1,5 +1,6 @@
 // 1. 상단 고정 메뉴
 function showSection(sectionId) {
+    // #region step 1
     // 섹션 숨기기
     document.getElementById('extract').style.display = 'none';
     document.getElementById('ranking').style.display = 'none';
@@ -14,8 +15,32 @@ function showSection(sectionId) {
     } else {
         nodeResetBtn.style.display = 'none';
     }
+    // #endregion step 1
+
+    // #region step 2
+    // document.querySelectorAll('main').forEach(node => {
+    //     if (node.id == sectionId) {
+    //         node.classList.remove('hide')
+
+    //         return
+    //     }
+
+    //     node.classList.add('hide')
+    // })
+    // #endregion step 2
+
+    // #region step 3
+    // const nodes = document.querySelectorAll('main')
+
+    // nodes.querySelectorAll(`main:not([id="${sectionId}"])`).add('hide')
+    // nodes.querySelector(`#${sectionId}`).remove('hide')
+    // #endregion step 3
+
+    // final
+    const mainNode = document.querySelectorAll('main')
+    mainNode.dataset.visiblePage = sectionId
 }
-// 2. 리셋 고정 버튼
+// 2. 리셋 고정 버튼 >> addEventListener가 null이였
 const nodeResetBtn = document.getElementById('resetButton')
 nodeResetBtn.addEventListener('click', resetExtractSection);
 function resetExtractSection() {
