@@ -1,125 +1,144 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="src/styles/style.css">
-    <!-- + Font 구글폰트로 변경-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- + 파비콘 추가 기본 -->
-    <title>Words Counter</title>
+	<link rel="stylesheet" href="src/styles/style_study.css">
+	<!-- + Font 구글폰트로 변경-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/src/styles/xsmall.css" media="screen and (max-width: 599.99px)">
+	<link rel="stylesheet" href="/src/styles/small.css" media="screen and (min-width: 600px) and (max-width: 768.99px)">
+	<link rel="stylesheet" href="/src/styles/medium.css"
+		media="screen and (min-width: 768px) and (max-width: 991.99px)">
+	<link rel="stylesheet" href="/src/styles/large.css"
+		media="screen and (min-width: 992px) and (max-width: 1199.99px)">
+	<link rel="stylesheet" href="/src/styles/xlarge.css" media="screen and (min-width: 1200px)">
 
-    <!-- JS 파일 연결 -->
-    <script defer src="./src/main.js"></script>
-    <!-- <script src="./src/main_study.js"></script> -->
-    <!-- <script async src="./src/main_study.js"></script> -->
-    <script defer src="./src/main_study.js"></script>
+	<!-- + 파비콘 추가 기본 -->
+	<title>Words Counter</title>
 
-    <!-- Google Analytics 방문통계-->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXWQH60SPY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RXWQH60SPY');
-    </script> -->
+	<!-- JS 파일 연결 -->
+	<!-- <script defer src="https://cdn.tailwindcss.com"></script> -->
+	<script defer src="./src/main_study.js"></script>
+
+	<!-- Google Analytics 방문통계-->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXWQH60SPY"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-RXWQH60SPY');
+	</script> -->
 </head>
-<body class="bg-gray-100">
-    <!-- 1. 상단 고정 메뉴 -->
-    <nav class="bg-gray-900 text-white py-3 fixed top-0 w-full shadow-md z-10">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex space-x-4">
-                <a href="#" onclick="showSection('extract')" class="hover:text-sky-400 font-bold">분석기</a>
-                <a href="#" onclick="showSection('ranking')" class="hover:text-sky-400 font-bold">순위</a>
-            </div>
-            <div class="text-2xl font-bold tracking-wider">
-                단어 빈도 분석기
-            </div>
-            <div class="flex space-x-4">
-                <!-- 깃허브 -->
-                <a href="https://github.com/jihyeon121223/HOCOside" target="_blank" class="hover:text-sky-400">
-                    <i class="fa-brands fa-github text-xl"></i>
-                </a>
-                <!-- 이메일 -->
-                <a class="hover:text-sky-400 cursor-pointer" onclick="navigator.clipboard.writeText('yjh121223@gmail.com'); alert('이메일 주소가 복사되었습니다!');">
-                    <i class="fas fa-envelope"> 문의</i>
-                </a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- 페이지 컨텐츠 -->
-    <div class="pt-20">
+<body>
+	<div class="container responsive">
+		<header>
+			<nav>
+				<h1>단어 빈도 분석기</h1>
 
-        <header class="text-center mb-6">
-            <p class="text-gray-600">텍스트를 입력하거나 파일을 업로드하여 단어 수를 확인하세요.</p>
-            <p class="text-gray-400 text-sm mt-2">예시: 카카오톡 대화 내보내기 파일.txt을 업로드하거나 복사하여 붙여넣기 하세요.</p>
-        </header>
+				<div class="display-l display-xl">
+					<ul class="menu">
+						<li>
+							<a href="#extract" data-page-id="extract" class="menu-item">분석기</a>
+						</li>
+						<li>
+							<a href="#ranking" data-page-id="ranking" class="menu-item">순위</a>
+						</li>
+						<li>
+							<a href="https://github.com/jihyeon121223/HOCOside" target="_blank">
+								<i class="fa-brands fa-github text-xl">Github</i>
+							</a>
+						</li>
+						<li>
+							<a href="#contact">
+								<i class="fas fa-envelope">문의</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="display-xs display-s display-m">
+					<button class="menu-icon">
+						<i class="fas fa-bars"></i>
+					</button>
+					<dialog class="menu">
+						<p>Menu</p>
+						<button class="close">
+							<i class="fas fa-times"></i>
+						</button>
+						<form method="dialog">
+							<ul>
+								<li>
+									<a href="#extract" data-page-id="extract" class="menu-item">분석기</a>
+								</li>
+								<li>
+									<a href="#ranking" data-page-id="ranking" class="menu-item">순위</a>
+								</li>
+								<li>
+									<a href="https://github.com/jihyeon121223/HOCOside" target="_blank">
+										<i class="fa-brands fa-github text-xl">Github</i>
+									</a>
+								</li>
+								<li>
+									<a href="#contact">
+										<i class="fas fa-envelope">문의</i>
+									</a>
+								</li>
+							</ul>
+						</form>
+					</dialog>
+				</div>
+			</nav>
+		</header>
+		<main data-visible-page="extract">
+			<div id="extract" class="container page">
+				<div>
+					<p>
+						<span>텍스트를 입력하거나 파일을 업로드하여 단어 수를 확인하세요.</span><br>
+						<span>예시: 카카오톡 대화 내보내기 파일.txt을 업로드하거나 복사하여 붙여넣기 하세요.</span>
+					</p>
+				</div>
 
-        <!-- 2. 리턴 버튼 -->
-        <button id="resetButton" class="fab fixed bottom-10 right-10 bg-yellow-500 text-white text-lg rounded-full w-20 h-20 shadow-lg hover:bg-yellow-600">Reset</button>
+				<form>
+					<h2>텍스트 입력</h2>
+					<textarea id="textInput" rows="6" placeholder="여기에 텍스트를 입력하거나 텍스트 파일을 끌어다 놓으세요"></textarea>
+					<p><span id="wordcount">0</span> 단어</p>
 
-        <!-- 분석기 섹션1-->
-        <main id="extract" class="container mx-auto p-6 max-w-lg">
+					<button id="extract" type="submit">extract</button>
+					<button id="reset" type="reset">reset</button>
+				</form>
 
-            <!-- 3. 텍스트 추출 -->
-            <section class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 mb-2">텍스트 입력</h2>
-                <textarea id="textInput" rows="6" class="w-full p-3 border border-gray-300 rounded" placeholder="여기에 텍스트 입력"></textarea>
-                <div id="wordCount" class="text-right text-gray-600 mt-2">0 단어</div>
-            </section>
+				<div>
+					<h2>단어 빈도 분석 결과</h2>
+					<ul id="wordlist"></ul>
 
-            <!-- 4. 파일 업로드 -->
-            <section class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 mb-2">파일 업로드</h2>
-                <input type="file" id="fileInput" class="w-full p-2 border border-gray-300 rounded" accept=".txt">
-            </section>
+					<button id="saveRanking">순위 기록하기</button>
+				</div>
+			</div>
+			<div id="ranking" class="container page">
+				<h2>단어 순위</h2>
+				<div>
+					<ul id="rankingList"></ul>
+				</div>
+				<div>
+					<button>이전</button>
+					<button>다음</button>
+				</div>
+			</div>
+		</main>
+		<footer data-cssdisable-visible="hidden">
+			<p id="contact">문의: (000) 000-0000</p>
+		</footer>
+	</div>
 
-            <!-- 5. 추출 -->
-            <div class="mb-6">
-                <button onclick="extractWords()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 w-full rounded-md">단어 추출</button>
-            </div>
-            <!-- 진행 바 -->
-            <div id="progressBar" class="w-full h-2 bg-gray-200 rounded-full mb-6" style="display: none;">
-                <div id="progress" class="h-full bg-yellow-500 rounded-full" style="width: 0;"></div>
-            </div>
-            <!-- 결과 출력 -->
-            <section class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 mb-2">단어 빈도</h2>
-                <div class="p-4 border border-gray-300 rounded-lg shadow-sm">
-                    <ul id="wordsList" class="list-disc list-inside mt-2 text-gray-600"></ul>
-                </div>
-            </section>
-
-            <!-- 6. 랭킹 저장 -->
-            <div class="mb-6">
-                <button id="saveRankingButton" onclick="saveRanking()" class="bg-green-600 px-4 py-2 text-white hover:bg-green-700 w-full rounded-md" style="display: none;">순위 기록하기</button>
-            </div>
-
-        </main>
-
-        <!-- 랭킹 섹션2 -->
-        <main id="ranking" class="container mx-auto p-6 max-w-lg">
-            <section class="mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">단어 순위</h2>
-
-                <!-- 7. 랭킹 저장 -->
-                <div id="wordFrequencyResults" class="mt-4">
-                    <ul id="rankingList" class="divide-y divide-gray-200">JSfile</ul>
-                </div>
-
-                <!-- 8. 페이징 -->
-                <div class="mt-6 flex justify-center space-x-2">
-                    <button class="bg-gray-300 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-400" onclick="prevPage()">이전</button>
-                    <button class="bg-gray-300 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-400" onclick="nextPage()">다음</button>
-                </div>
-            </section>
-        </main>
-
-    </div>
-
+	<template id="productrow">
+		<tr>
+			<td class="record">test</td>
+			<td>test</td>
+		</tr>
+	</template>
 </body>
 
 </html>
