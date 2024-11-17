@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="src/styles/style_jh2.css">
+	<!-- + Font 구글폰트로 변경-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/src/styles/xsmall.css" media="screen and (max-width: 599.99px)">
+	<link rel="stylesheet" href="/src/styles/small.css" media="screen and (min-width: 600px) and (max-width: 768.99px)">
+	<link rel="stylesheet" href="/src/styles/medium.css"
+		media="screen and (min-width: 768px) and (max-width: 991.99px)">
+	<link rel="stylesheet" href="/src/styles/large.css"
+		media="screen and (min-width: 992px) and (max-width: 1199.99px)">
+	<link rel="stylesheet" href="/src/styles/xlarge.css" media="screen and (min-width: 1200px)">
+
+	<!-- + 파비콘 추가 기본 -->
+	<title>Words Counter</title>
+
+	<!-- JS 파일 연결 -->
+	<!-- <script defer src="https://cdn.tailwindcss.com"></script> -->
+	<script defer src="./src/main_study.js"></script>
+
+	<!-- Google Analytics 방문통계-->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXWQH60SPY"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-RXWQH60SPY');
+	</script> -->
+</head>
+
+<body>
+	<div class="container responsive">
+		<header>
+			<nav>
+				<h1>단어 빈도 분석기</h1>
+
+				<div class="display-l display-xl">
+					<ul class="menu">
+						<li>
+							<a href="#extract" data-page-id="extract" class="menu-item">분석기</a>
+						</li>
+						<li>
+							<a href="#ranking" data-page-id="ranking" class="menu-item">순위</a>
+						</li>
+						<li>
+							<a href="https://github.com/jihyeon121223/HOCOside" target="_blank">
+								<i class="fa-brands fa-github text-xl">Github</i>
+							</a>
+						</li>
+						<li>
+							<a href="#contact">
+								<i class="fas fa-envelope">문의</i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="display-xs display-s display-m">
+					<button class="menu-icon">
+						<i class="fas fa-bars"></i>
+					</button>
+					<dialog class="menu">
+						<p>Menu</p>
+						<button class="close">
+							<i class="fas fa-times"></i>
+						</button>
+						<form method="dialog">
+							<ul>
+								<li>
+									<a href="#extract" data-page-id="extract" class="menu-item">분석기</a>
+								</li>
+								<li>
+									<a href="#ranking" data-page-id="ranking" class="menu-item">순위</a>
+								</li>
+								<li>
+									<a href="https://github.com/jihyeon121223/HOCOside" target="_blank">
+										<i class="fa-brands fa-github text-xl">Github</i>
+									</a>
+								</li>
+								<li>
+									<a href="#contact">
+										<i class="fas fa-envelope">문의</i>
+									</a>
+								</li>
+							</ul>
+						</form>
+					</dialog>
+				</div>
+			</nav>
+		</header>
+		<main data-visible-page="extract">
+			<div id="extract" class="container page">
+				<div>
+					<p>
+						<span>텍스트를 입력하거나 파일을 업로드하여 단어 수를 확인하세요.</span><br>
+						<span>예시: 카카오톡 대화 내보내기 파일.txt을 업로드하거나 복사하여 붙여넣기 하세요.</span>
+					</p>
+				</div>
+
+				<form>
+					<h2>텍스트 입력</h2>
+					<textarea id="textInput" rows="6" placeholder="여기에 텍스트를 입력하거나 텍스트 파일을 끌어다 놓으세요"></textarea>
+					<p><span id="wordcount">0</span> 단어</p>
+
+					<button id="extract" type="submit">extract</button>
+					<button id="reset" type="reset">reset</button>
+				</form>
+
+				<div>
+					<h2>단어 빈도 분석 결과</h2>
+					<ul id="wordlist"></ul>
+
+					<button id="saveRanking">순위 기록하기</button>
+				</div>
+			</div>
+			<div id="ranking" class="container page">
+				<h2>단어 순위</h2>
+				<div>
+					<ul id="rankingList"></ul>
+				</div>
+				<div>
+					<button>이전</button>
+					<button>다음</button>
+				</div>
+			</div>
+		</main>
+		<footer data-cssdisable-visible="hidden">
+			<p id="contact">문의: (000) 000-0000</p>
+		</footer>
+	</div>
+
+	<template id="productrow">
+		<tr>
+			<td class="record">test</td>
+			<td>test</td>
+		</tr>
+	</template>
+</body>
+
+</html>
