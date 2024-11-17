@@ -1,0 +1,9 @@
+.container.responsive {
+	width: 720px;
+}
+.display-xs, .display-s, .display-l, .display-xl	 {
+	display: none !important;
+}
+.display-m {
+	display: inherit !important;
+}

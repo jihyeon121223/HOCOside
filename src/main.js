@@ -116,10 +116,10 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
 
 // 5. 제출
 // 중복 제출 방지
-let isProcessing = false; 
-// 단어 추출 
+let isProcessing = false;
+// 단어 추출
 function extractWords() {
-    // 현재 처리 중이면 중복 실행 방지 
+    // 현재 처리 중이면 중복 실행 방지
     if (isProcessing) {
         return;
     } // early return pattern
@@ -130,7 +130,7 @@ function extractWords() {
 
     // 인풋값 가져오기
     const textInput = document.getElementById('textInput').value;
-    
+
     // 전처리: 단어 나누고 빈 단어 제외
     const words = textInput.toLowerCase().split(/\s+/).filter(word => word.trim() !== '');
 
@@ -145,13 +145,14 @@ function extractWords() {
         // 결과 표시
         const wordsList = document.getElementById('wordsList');
         // 기존 리스트 초기화
-        wordsList.innerHTML = '';  
+        wordsList.innerHTML = '';
         sortedWords.forEach(([word, count]) => {
             const listItem = document.createElement('li');
             listItem.textContent = `${word}: (${count})`;
             // 빈도에 따라 클래스 추가 (스타일 적용 용도)
             if (count > 5) {
                 listItem.setAttribute('data-count', 'high');
+                listItem.dataset.count = 'high';
             } else if (count > 2) {
                 listItem.setAttribute('data-count', 'medium');
             } else {
@@ -171,7 +172,7 @@ function extractWords() {
     }
 
     // 처리 완료 후 다시 제출 가능 상태로 변경
-    isProcessing = false; 
+    isProcessing = false;
 }
 // 프로그레스 바 제어
 function showProgressBar() {
@@ -212,7 +213,7 @@ function saveRanking() {
 
     // 상위 30개 랭킹 저장
     const topRankings = rankings.slice(0, 30);
-    
+
     localStorage.setItem('rankings', JSON.stringify(topRankings));
 
     alert('랭킹이 성공적으로 저장되었습니다.');
@@ -224,7 +225,7 @@ function saveRanking() {
 function displayRankings() {
     const rankingList = document.getElementById('rankingList');
     rankingList.innerHTML = ''; // 초기화
-    
+
     const rankings = JSON.parse(localStorage.getItem('rankings')) || [];
 
     console.log('로컬 스토리지에서 불러온 랭킹:', rankings); // 로드된 랭킹 확인
@@ -247,14 +248,13 @@ function displayRankings() {
 // 페이지 로드 시 랭킹 표시
 window.onload = displayRankings;
 
-
 // 7. 랭킹 페이지
 let currentPage = 1;
 const wordsPerPage = 10; // 한 페이지에 표시할 단어 수
 function displayRanking(rankingData) {
     const rankingList = document.getElementById('rankingList');
     // 기존 리스트를 초기화
-    rankingList.innerHTML = ''; 
+    rankingList.innerHTML = '';
 
     // 현재 페이지에 맞는 단어 데이터 추출
     const start = (currentPage - 1) * wordsPerPage;
@@ -262,15 +262,12 @@ function displayRanking(rankingData) {
     const currentRanking = rankingData.slice(start, end);
 
     // 단어 리스트 추가
-    currentRanking.forEach((item, index) => {
-        const listItem = `
-            <li class="py-4 flex justify-between">
-                <span class="text-lg text-gray-700">${start + index + 1}. ${item.word}</span>
-                <span class="text-lg text-gray-700">${item.count}회</span>
-            </li>
-        `;
-        rankingList.innerHTML += listItem;
-    });
+    rankingList.innerHTML = currentRanking.map((item, index) => `
+        <li class="py-4 flex justify-between">
+            <span class="text-lg text-gray-700">${start + index + 1}. ${item.word}</span>
+            <span class="text-lg text-gray-700">${item.count}회</span>
+        </li>
+    `).join('');
 }
 
 // 8. 페이징
@@ -287,5 +284,3 @@ function nextPage() {
         displayRanking(rankingData);
     }
 }
-
-

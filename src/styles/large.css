@@ -1,0 +1,12 @@
+.container.responsive {
+	width: 960px;
+}
+.display-xs, .display-s, .display-m, .display-xl {
+	display: none !important;
+}
+.display-l {
+	display: inherit !important;
+}
+header nav {
+	height: var(--header-height);
+}

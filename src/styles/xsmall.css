@@ -1,0 +1,12 @@
+.container.responsive {
+	width: calc(100vw - 2em);
+}
+.display-s, .display-m, .display-l, .display-xl	 {
+	display: none !important;
+}
+.display-xs {
+	display: inherit !important;
+}
+.w-xs-100 {
+	width: 100% !important;
+}

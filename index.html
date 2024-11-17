@@ -17,13 +17,13 @@
     <!-- <script async src="./src/main_study.js"></script> -->
     <script defer src="./src/main_study.js"></script>
 
-    <!-- Google Analytics 방문통계-->    
+    <!-- Google Analytics 방문통계-->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXWQH60SPY"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-RXWQH60SPY'); 
+        gtag('config', 'G-RXWQH60SPY');
     </script> -->
 </head>
 <body class="bg-gray-100">
@@ -38,7 +38,7 @@
                 단어 빈도 분석기
             </div>
             <div class="flex space-x-4">
-                <!-- 깃허브 -->                
+                <!-- 깃허브 -->
                 <a href="https://github.com/jihyeon121223/HOCOside" target="_blank" class="hover:text-sky-400">
                     <i class="fa-brands fa-github text-xl"></i>
                 </a>
@@ -51,7 +51,7 @@
     </nav>
 
     <!-- 페이지 컨텐츠 -->
-    <div class="pt-20"> 
+    <div class="pt-20">
 
         <header class="text-center mb-6">
             <p class="text-gray-600">텍스트를 입력하거나 파일을 업로드하여 단어 수를 확인하세요.</p>
@@ -60,7 +60,7 @@
 
         <!-- 2. 리턴 버튼 -->
         <button id="resetButton" class="fab fixed bottom-10 right-10 bg-yellow-500 text-white text-lg rounded-full w-20 h-20 shadow-lg hover:bg-yellow-600">Reset</button>
-    
+
         <!-- 분석기 섹션1-->
         <main id="extract" class="container mx-auto p-6 max-w-lg">
 
@@ -70,7 +70,7 @@
                 <textarea id="textInput" rows="6" class="w-full p-3 border border-gray-300 rounded" placeholder="여기에 텍스트 입력"></textarea>
                 <div id="wordCount" class="text-right text-gray-600 mt-2">0 단어</div>
             </section>
-            
+
             <!-- 4. 파일 업로드 -->
             <section class="mb-8">
                 <h2 class="text-xl font-semibold text-gray-800 mb-2">파일 업로드</h2>
@@ -92,7 +92,7 @@
                     <ul id="wordsList" class="list-disc list-inside mt-2 text-gray-600"></ul>
                 </div>
             </section>
-            
+
             <!-- 6. 랭킹 저장 -->
             <div class="mb-6">
                 <button id="saveRankingButton" onclick="saveRanking()" class="bg-green-600 px-4 py-2 text-white hover:bg-green-700 w-full rounded-md" style="display: none;">순위 기록하기</button>
@@ -104,7 +104,7 @@
         <main id="ranking" class="container mx-auto p-6 max-w-lg">
             <section class="mb-8">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-4">단어 순위</h2>
-        
+
                 <!-- 7. 랭킹 저장 -->
                 <div id="wordFrequencyResults" class="mt-4">
                     <ul id="rankingList" class="divide-y divide-gray-200">JSfile</ul>
