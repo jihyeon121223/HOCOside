@@ -201,3 +201,4 @@ const render = params => {
 // initializtion / constructor in class
 bindEvents()
 render({ pageId: 'extract' })
+
