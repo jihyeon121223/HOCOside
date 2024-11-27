@@ -26,6 +26,8 @@ const btnClose = menuModal.querySelector('button.close')
 const prevPageButton = document.querySelector('#prevPage');
 const nextPageButton = document.querySelector('#nextPage');
 
+const reader = new FileReader()
+
 const analysisResults = {
 	wordCount: 0,
 	hashTable: {}
@@ -111,11 +113,11 @@ const handleFileDrop = e => {
 	const file = e.dataTransfer?.files[0]
 	if (!file) return
 
-	const reader = new FileReader() ///*TODO: move global scope */
-	reader.onload = e => textArea.value = e.target.result
 	reader.readAsText(file)
 }
 const bindEvents = () => {
+	reader.onload = e => textArea.value = e.target.result
+
 	menuNodes.forEach(item => {
 		item.addEventListener('click', e => {
 			e.preventDefault()
@@ -130,8 +132,6 @@ const bindEvents = () => {
 		e.preventDefault()
 
 		window.location.href = 'mailto:yjh121223@gmail.com';
-		// navigator.clipboard.writeText('yjh121223@gmail.com')
-		// alert('이메일 주소가 복사되었습니다!')
 	})
 
 	github.addEventListener('click', e => {
@@ -179,6 +179,7 @@ const bindEvents = () => {
 			return acc + `<li>[${idx + 1}] ${word}: (${count})</li>`
 		}, '')
 
+		displayRanking(rankingData) // 임시 대응책
 		changeView('ranking')
 	})
 
@@ -243,9 +244,6 @@ const nextPage = () => {
         displayRanking(rankingData);
     }
 };
-///* TODO: 이전이나 다음을 누르기 전까지 원 상태 리스트 그대로 있음 */
-
-
 
 bindEvents()
 render({ pageId: 'extract' })
