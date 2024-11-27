@@ -22,7 +22,6 @@
 - Netlify를 통해 안정적이고 빠른 배포 
 
  [특징]
-### Let me analyze the main.js file's key characteristics and advantages:
 1. 상태 관리 (State Management):
   - SATAE (STATE) enum을 사용하여 애플리케이션의 상태를 명확하게 관리
   - READY, ANALYZING, RESULT 세 가지 상태로 구분하여 흐름 제어
@@ -56,6 +55,7 @@
 UI/UX 개선: 사용자 경험 중심으로 반복적인 개선 작업을 거치며 직관적인 디자인의 가치를 배웠습니다.
 
 ++++++++++++++++++++++++++++++++++++++진행 피드백 기록
+기획 의도=========
 # 문장 단어 추리기
 1. 실시간 미국 정세
 2. 병원기록
@@ -115,7 +115,7 @@ JS는 실행이 아니라 동작을 정의하는것.
   - 전역 변수들이 너무 많음 (state, analysisResults, rankingData, currentPage 등)
   - 상태 관리가 분산되어 있어 추적이 어려움
 3.에러 처리 부족:
-'''javascript
+₩₩₩javascript
 const onAnalyzing = params => {
     try {
         // ...existing code...
@@ -134,7 +134,7 @@ const handleFileDrop = e => {
         alert('파일을 읽는데 실패했습니다.');
     }
 }
-'''
+₩₩₩
 4. 성능 이슈:
   - 대용량 텍스트 처리 시 최적화 없음
   - 불필요한 DOM 조작이 많음
